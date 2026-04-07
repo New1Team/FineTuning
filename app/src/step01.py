@@ -1,4 +1,4 @@
-from settings import settings
+from core.settings import settings
 import json
 from sessions.data import datalist
 

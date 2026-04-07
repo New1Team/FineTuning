@@ -1,4 +1,4 @@
-from settings import settings
+from core.settings import settings
 # Hugging Face Hub 관리 도구 중 저장소 삭제를 위한 함수를 불러옵니다.
 from huggingface_hub import delete_repo
 

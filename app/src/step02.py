@@ -1,4 +1,4 @@
-from settings import settings
+from core.settings import settings
 # Hugging Face의 데이터셋 처리 및 업로드를 위한 라이브러리를 불러옵니다.
 from datasets import load_dataset
 
