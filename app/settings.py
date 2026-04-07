@@ -4,6 +4,7 @@ class Settings(BaseSettings):
   hf_token: str
   repo_name: str
   json_file: str
+  folder_path: str
 
   model_config = SettingsConfigDict(
     env_file=".env",
