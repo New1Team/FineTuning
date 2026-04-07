@@ -1,15 +1,13 @@
 from settings import settings
 import json
+from sessions.data import datalist
 
 # 저장할 학습용 데이터셋 예시입니다.
 # 각 요소는 'prompt'(입력)와 'completion'(출력)을 키로 가진 딕셔너리 형태입니다.
 # 이 data를 어떻게 만드냐에 따라 성능에 차이가 생김(질문-답 한 세트)
 # 사용 모델에 따라 키가 달라짐
-data = [
-  {"prompt": "안녕?", "completion": "안녕하세요! 무엇을 도와드릴까요?"},
-  {"prompt": "날씨 어때?", "completion": "오늘은 맑고 화창합니다."},
-  {"prompt": "1+1은?", "completion": "2입니다."}
-]
+
+data = datalist
 
 def save_to_jsonl(data, filename):
   """
