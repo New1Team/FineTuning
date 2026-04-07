@@ -1,6 +1,15 @@
 from database.db import saveMany
-from sessions.data import datalist
+from src.sessions.data import datalist
+from fastapi import APIRouter
 
+
+router = APIRouter(
+    prefix="/db",
+    tags=["DB"]
+)
+
+
+@router.get("")
 def save_data_first():
   """
   현재의 dataset을 DB에 저장하는 함수입니다. 초기 1회용
@@ -16,8 +25,9 @@ def save_data_first():
         """
   values = [(row["prompt"], row["completion"]) for row in datalist]
   saveMany(sql1, sql2, values)
+  return {"status": True, "data": datalist}
 
-
+@router.post("/save")
 def save_data(new_data_list):
   """
   추가된 프롬포트를 DB에 추가 저장하는 함수입니다.
@@ -36,21 +46,4 @@ def save_data(new_data_list):
         """
   values = [(row["prompt"], row["completion"]) for row in data]
   saveMany(sql1, sql2, values)
-  return data
-
-def run():
-  """
-  처음 DB에 데이터 추가시 프로그램 메인 로직 실행 함수
-  """
-  save_data_first()
-if __name__ == "__main__":
-  run()
-
-# def run(new_data_list):
-#   """
-#   이후 new_data 추가시 프로그램 메인 로직 실행 함수
-#   """
-#   save_data(new_data_list)
-  
-# if __name__ == "__main__":
-#   run()
+  return {"status": True, "data": data}
