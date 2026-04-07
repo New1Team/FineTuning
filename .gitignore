@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# env
+.env
+.env.*
+!.env.example
+
+pycache/
+*.pyc
+
+# data 폴더 제외
+data/
+
+
+
+#자동실행으로 merge 시 충돌 일어날수 있는 부분
+
+__pycache__/
+*.pyc"app/.env" 
