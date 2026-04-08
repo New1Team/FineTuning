@@ -3,7 +3,7 @@ from unsloth import FastLanguageModel
 def run():
   # 1. 사전 학습된 모델과 토크나이저를 불러옵니다.
   model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name = "unsloth/gemma-4-26B-A4B-it", # 불러올 모델의 경로 또는 허브 이름
+    model_name = "unsloth/Llama-3.1-8B-Instruct", # 불러올 모델의 경로 또는 허브 이름
     max_seq_length = 2048, # 모델이 한 번에 처리할 최대 토큰 길이 (메모리에 영향)
     dtype = None,          # 데이터 타입 (None 설정 시 시스템에 맞춰 자동 감지: float16, bfloat16 등)
     load_in_4bit = True,   # 4비트 양자화(Quantization) 사용 여부. 메모리 사용량을 획기적으로 줄여줌
